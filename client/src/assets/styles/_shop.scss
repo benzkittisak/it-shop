@@ -1,0 +1,416 @@
+.sidebar-widget {
+  margin: 20px 0px 40px 0px;
+  display: block;
+
+  .sidebar-widget-list {
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 30px 0;
+      li {
+        position: relative;
+        align-items: center;
+        padding: 0 0 15px;
+
+        &:last-child {
+          padding: 0;
+        }
+
+        .sidebar-widget-list-left {
+          input {
+            position: absolute;
+            z-index: 999;
+            width: auto;
+            cursor: pointer;
+            opacity: 0;
+
+            &:checked ~ .checkMark {
+              border: 2px solid #fa6bff;
+              background-color: #fa6bff;
+            }
+            &:checked ~ .checkMark::after {
+              display: block;
+            }
+          }
+          .checkMark {
+            position: absolute;
+            left: 0;
+            width: 15px;
+            height: 15px;
+            border: 2px solid #888;
+            border-radius: 3px;
+            background-color: white;
+
+            &::after {
+              position: absolute;
+              display: none;
+              content: "";
+
+              top: 0;
+              left: 3px;
+              width: 5px;
+              height: 8px;
+              transform: rotate(45deg);
+              border: solid white;
+              border-width: 0 2px 2px 0;
+              border-top-width: medium;
+              border-right-width: medium;
+              border-bottom-width: medium;
+              border-left-width: medium;
+            }
+          }
+        }
+        a,
+        button {
+          position: relative;
+          display: block;
+          width: 100%;
+          padding: 0;
+          padding-left: 30px;
+          text-align: left;
+          border: none;
+          background: none;
+          span {
+            font-weight: 400;
+            font-size: 20px;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            display: inline-block;
+            width: 30px;
+            height: 20px;
+            transition: all 0.3s ease-in-out 0s;
+            transform: translateY(-50%);
+            text-align: center;
+            border: #9a9a9a;
+            background-color: #eee;
+          }
+
+          &:hover,
+          &.active {
+            span {
+              color: white;
+              background-color: #4a90e2;
+            }
+
+            & > .checkMark {
+              border-color: #4a90e2;
+              background-color: #4a90e2;
+
+              &::after {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.shop-bottom-area {
+  .col-xl-4 {
+    transition: 0.5s;
+  }
+  .grid {
+    .shop-list-wrap {
+      display: none;
+    }
+  }
+  .three-column {
+    animation-name: fadeInUp;
+    animation-duration: 1s;
+  }
+
+  .list {
+    animation-name: fadeInUp;
+    animation-duration: 1s;
+    .product-wrap {
+      display: none;
+    }
+
+    & > .col-xl-4 {
+      flex: 1 0 100%;
+      max-width: 100%;
+      transition: 0.5s;
+    }
+  }
+}
+
+.shop-list-wrap {
+  .product-list-image-wrap {
+    position: relative;
+    .product-img {
+      position: relative;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+        object-position: top center;
+      }
+
+      &-badges {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+
+        span {
+          font-size: 13px;
+          font-weight: 500;
+          line-height: 1;
+          display: block;
+          margin-bottom: 10px;
+          padding: 3px 11px;
+          color: white;
+          border-radius: 3px;
+
+          &.purple {
+            background-color: #4a90e2;
+          }
+        }
+      }
+    }
+  }
+
+  .shop-list-content {
+    h3 {
+      font-size: 24px;
+      margin: 0;
+      color: #010101;
+      @media screen and (max-width: 720px) {
+        padding: 10px 0;
+      }
+    }
+    a {
+      color: #010101;
+      text-decoration: none;
+      &:hover {
+        color: #4a90e2;
+      }
+    }
+
+    .product-list-price {
+      margin: 13px 0 22px;
+
+      span {
+        font-size: 24px;
+        line-height: 1;
+        display: inline-block;
+        color: #fe5252;
+      }
+    }
+    p {
+      font-size: 15px;
+      line-height: 28px;
+      color: #8f8f8f;
+    }
+    .shop-list-btn {
+      a,
+      button {
+        clear: both;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1;
+        z-index: 1;
+        display: inline-block;
+        padding: 14px 32px 15px;
+        color: white;
+        border: 1px solid transparent;
+        background-color: #343538;
+        transition: 0.5s all ease-in-out;
+
+        &::before {
+          background-color: #4a90e2;
+        }
+        &:hover {
+          border: 1px solid #4a90e2;
+        }
+      }
+    }
+  }
+}
+
+.product-pagination-style {
+  ul {
+    li {
+      display: inline-block;
+      margin: 0 4px;
+
+      a,
+      button {
+        font-size: 16px;
+        line-height: 3px;
+        display: inline-block;
+        width: 43px;
+        height: 43px;
+        padding: 0;
+        color: #4a90e2;
+        border: none;
+        border-radius: 100% !important;
+        box-shadow: 0 0 12px 0.8px rgba($color: black, $alpha: 0.1);
+        &:hover {
+          color: white;
+          background-color: #4a90e2;
+        }
+      }
+      a.active {
+        color: white;
+        background-color: #4a90e2 !important;
+        box-shadow: none;
+        &:hover {
+          background-color: #333;
+        }
+      }
+      a.prev,
+      a.next {
+        font-size: 17px;
+        color: #4a90e2;
+        background-color: #f6f6f6;
+        box-shadow: none;
+
+        &:hover {
+          color: white;
+          background-color: #4a90e2;
+        }
+      }
+      &.page-item {
+        .page-link {
+          color: #4a90e2;
+          border: none;
+
+          &:hover {
+            color: white;
+            background-color: #4a90e2;
+          }
+        }
+        &.active {
+          .page-link {
+            border-color: #4a90e2;
+            background-color: #4a90e2;
+            box-shadow: 0 0 12px 0.8px rgba($color: black, $alpha: 0.1);
+            &:focus {
+              box-shadow: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.product-wrap {
+    position: relative;
+  
+    &.mb-25 {
+      margin-bottom: 25px;
+    }
+  
+    .product-img {
+      position: relative;
+      overflow: hidden;
+  
+      img {
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+      }
+  
+      &-badges {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 1;
+        display: block;
+        margin-bottom: 10px;
+        padding: 3px 11px;
+        color: white;
+        border-radius: 3px;
+        background: #52d8dd;
+  
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+  
+    .product-action {
+      position: absolute;
+      z-index: 9;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+  
+      > div {
+        display: flex;
+        gap: 0;
+        visibility: hidden;
+        align-items: center;
+        justify-content: center;
+        height: 48px;
+        width: 100%;
+        transition: all 0.5s ease-in-out;
+        transform: translateY(20px);
+        opacity: 0;
+        background-color: #4a90e2;
+      }
+  
+      .pro-quickview {
+        font-size: 14px;
+        width: calc(100% - 48px - 48px);
+  
+        transition-delay: 0.1s;
+      }
+      .pro-same-action {
+        a,
+        button {
+          font-size: 16px;
+          line-height: 48px;
+          display: block;
+          width: 100%;
+          height: 48px;
+          text-align: center;
+          color: white;
+          border: none;
+          background-color: none;
+          background-color:#4a90e2;
+          &:hover {
+            background-color: black;
+          }
+        }
+      }
+    }
+  
+    .product-content {
+      margin: 20px 0 0;
+      a {
+        text-decoration: none;
+        color: #333;
+      }
+      h3 {
+        font-size: 16px;
+        margin: 0;
+      }
+  
+      .product-price {
+        span {
+          font-size: 15px;
+          font-weight: 400;
+          position: relative;
+          margin: 0 9px;
+          color: black;
+        }
+      }
+    }
+    &:hover .product-action > div {
+      visibility: visible;
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  

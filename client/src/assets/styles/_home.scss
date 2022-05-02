@@ -1,0 +1,31 @@
+.home-page{
+    .home-slide{
+        &-swiper{
+            position: relative;
+            overflow: hidden;
+            background:#f9effd;
+            &-content{
+                padding:40px;
+                width: 100%;
+                height: 100%;
+                display:flex;
+                flex-direction: column;
+                justify-content: center;                
+                h4{
+                    padding-bottom:20px;
+                }
+                h1{
+                    font-weight: bold;
+                    letter-spacing:2px;
+                }
+            }
+
+            img{
+                padding: 10px;
+                width:100%;
+                height:550px;
+                object-fit: cover;
+            }
+        }
+    }
+}
